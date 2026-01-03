@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSCybernetica</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #0a0f2c 0%, #000 100%);
+      color: #00eaff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: #00eaff;
+      text-shadow:
+        0 1px 0 #00bfff,
+        0 2px 0 #00bfff,
+        0 3px 0 #00bfff,
+        0 4px 0 #0088ff,
+        0 5px 10px rgba(0, 238, 255, 0.8),
+        0 0 20px rgba(0, 238, 255, 0.9),
+        0 0 40px rgba(0, 238, 255, 1);
+      animation: brilho 3s infinite alternate;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    @keyframes brilho {
+      from {
+        text-shadow:
+          0 1px 0 #00bfff,
+          0 2px 0 #00bfff,
+          0 3px 0 #00bfff,
+          0 4px 0 #0088ff,
+          0 5px 10px rgba(0, 238, 255, 0.8),
+          0 0 20px rgba(0, 238, 255, 0.9),
+          0 0 40px rgba(0, 238, 255, 1);
+      }
+      to {
+        text-shadow:
+          0 1px 0 #00ffff,
+          0 2px 0 #00ffff,
+          0 3px 0 #00ffff,
+          0 4px 0 #00eaff,
+          0 5px 20px rgba(0, 255, 255, 0.9),
+          0 0 30px rgba(0, 255, 255, 1),
+          0 0 60px rgba(0, 255, 255, 1);
+      }
+    }
+
+    .neon-line {
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00eaff, transparent);
+      box-shadow: 0 0 20px #00eaff;
+      margin: 20px 0;
+      animation: neonMove 2s infinite linear;
+    }
+
+    @keyframes neonMove {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    /* Menu principal (externos) */
+    nav.main-menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    nav.main-menu a {
+      text-decoration: none;
+      color: #00eaff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: 2px solid #00eaff;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    nav.main-menu a:hover {
+      background: #00eaff;
+      color: #0a0f2c;
+      box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+      transform: scale(1.1);
+    }
+
+    /* Submenu interno (conteúdo) */
+    nav.submenu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    nav.submenu a {
+      text-decoration: none;
+      color: #00eaff;
+      font-weight: bold;
+      padding: 8px 15px;
+      border: 2px solid #00eaff;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav.submenu a:hover {
+      background: #00eaff;
+      color: #0a0f2c;
+      box-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+      transform: scale(1.05);
+    }
+
+    p, .content-box {
+      font-size: 1.3rem;
+      text-align: center;
+      max-width: 600px;
+      color: #9be7ff;
+      text-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+      margin-bottom: 40px;
+    }
+
+    .content-box {
+      border: 2px solid #00eaff;
+      border-radius: 20px;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 0 20px #00eaff;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>FSCybernetica</h1>
+  <div class="neon-line"></div>
+
+  <!-- Menu Principal (externos) -->
+  <nav class="main-menu">
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <a href="https://www.youtube.com" target="_blank">YouTube</a>
+    <a href="https://www.fscybernetica.com" target="_blank">Meu Site</a>
+    <a href="https://www.github.com/charon13web/python.py" target="_blank">GitHub</a>
+    <a href="https://wa.me/5583982346086" target="_blank">WhatsApp</a>
+  </nav>
+
+  <!-- Submenu interno (conteúdo da página) -->
+  <nav class="submenu">
+    <a onclick="showContent('welcome')">Boas-Vindas</a>
+    <a onclick="showContent('security')">Segurança</a>
+    <a onclick="showContent('password')">Trocar Senhas</a>
+  </nav>
+
+  <p>Explore os links do menu para acessar sites ou aprender dicas importantes de cibersegurança.</p>
+
+  <!-- Conteúdo interno -->
+  <div id="welcome" class="content-box">
+    <h2>Bem-vindo ao FSCybernetica!</h2>
+    <p>Este é o seu portal de tecnologia e segurança digital. Fique atento e aprenda sempre!</p>
+  </div>
+
+  <div id="security" class="content-box">
+    <h2>Dicas de Segurança</h2>
+    <p>Proteja seus dados: use antivírus, não clique em links suspeitos e mantenha seus sistemas atualizados.</p>
+  </div>
+
+  <div id="password" class="content-box">
+    <h2>Troque suas Senhas</h2>
+    <p>Troque suas senhas regularmente, use combinações fortes e nunca compartilhe com ninguém.</p>
+  </div>
+
+  <script>
+    function showContent(id){
+      document.querySelectorAll('.content-box').forEach(box => box.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
